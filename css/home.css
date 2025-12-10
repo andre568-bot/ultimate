@@ -566,6 +566,14 @@
         font-size: var(--font-size-5xl);
     }
 
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .mockup-window {
+        max-width: 100%;
+    }
+
     .process-steps {
         flex-wrap: wrap;
     }
@@ -573,9 +581,15 @@
     .process-arrow {
         display: none;
     }
+
+    .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
+
+    /* Hero Mobile */
     .hero {
         min-height: auto;
         padding-top: 80px;
@@ -584,33 +598,206 @@
 
     .hero-title {
         font-size: var(--font-size-4xl);
+        margin-bottom: var(--space-4);
     }
 
     .hero-subtitle {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-8);
     }
 
     .hero-ctas {
         flex-direction: column;
+        gap: var(--space-3);
     }
 
     .hero-ctas .btn {
         width: 100%;
     }
 
+    /* Hide video on mobile for performance */
+    .hero-video {
+        display: none;
+    }
+
+    .hero-background {
+        background: var(--gradient-hero);
+    }
+
+    /* Mockup Mobile */
+    .mockup-window {
+        max-width: 100%;
+    }
+
+    .mockup-chat {
+        min-height: 250px;
+        padding: var(--space-4);
+    }
+
+    .message-bubble {
+        max-width: 85%;
+        font-size: var(--font-size-xs);
+    }
+
+    /* Values Section Mobile */
     .values-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-6);
     }
 
+    .value-card {
+        padding: var(--space-8);
+    }
+
+    .value-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Process Steps Mobile */
+    .process-steps {
+        flex-direction: column;
+        gap: var(--space-8);
+    }
+
+    .process-step {
+        text-align: left;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-xl);
+    }
+
+    .step-content h3 {
+        font-size: var(--font-size-base);
+    }
+
+    .step-content p {
+        font-size: var(--font-size-xs);
+    }
+
+    /* Use Cases Mobile */
     .use-cases-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-4);
     }
 
+    .use-case-card {
+        padding: var(--space-6);
+    }
+
+    .use-case-card h3 {
+        font-size: var(--font-size-base);
+    }
+
+    /* Technology Highlight Mobile */
+    .tech-content {
+        padding: var(--space-10);
+    }
+
+    .tech-content h2 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .tech-content p {
+        font-size: var(--font-size-base);
+    }
+
+    /* Trust Section Mobile */
     .metric-value {
         font-size: var(--font-size-5xl);
     }
 
-    .mockup-window {
-        max-width: 100%;
+    .metric-label {
+        font-size: var(--font-size-base);
+    }
+
+    /* CTA Final Mobile */
+    .cta-content {
+        padding: var(--space-10);
+    }
+
+    .cta-content h2 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .cta-content p {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Ultra-compact mobile */
+    .hero {
+        padding-top: 70px;
+        padding-bottom: var(--space-12);
+    }
+
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .value-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .value-card h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    .value-card p {
+        font-size: var(--font-size-sm);
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-lg);
+    }
+
+    .metric-value {
+        font-size: var(--font-size-4xl);
+    }
+
+    .cta-content h2 {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding-top: 70px;
+        padding-bottom: var(--space-10);
+    }
+
+    .mockup-chat {
+        min-height: 200px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+    .value-card,
+    .use-case-card,
+    .service-item {
+        /* Maintain hover states for better visual feedback on tap */
+        transition: all 0.2s ease;
+    }
+
+    .btn {
+        /* Larger tap targets */
+        padding: var(--space-4) var(--space-8);
     }
 }

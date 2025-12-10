@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - ultimAItech</title>
+    <meta name="description" content="Flexible pricing for businesses of all sizes. Start from €299/month.">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/decorative-elements.css">
+    <style>
+        .page-hero {
+            padding-top: 140px;
+            padding-bottom: var(--space-16);
+            background: var(--gradient-hero);
+            text-align: center;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--space-4);
+        }
+
+        .page-hero p {
+            font-size: var(--font-size-xl);
+            color: var(--color-neutral-200);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: rgba(26, 26, 62, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+            transition: all var(--transition-base);
+        }
+
+        .pricing-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: var(--shadow-xl), var(--shadow-glow);
+        }
+
+        .pricing-card.featured {
+            background: var(--gradient-primary);
+            color: var(--color-white);
+            transform: scale(1.05);
+            border: none;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .pricing-card.featured * {
+            color: var(--color-white);
+        }
+
+        .plan-name {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-4);
+        }
+
+        .plan-price {
+            font-size: var(--font-size-5xl);
+            font-weight: var(--font-weight-extrabold);
+            margin-bottom: var(--space-2);
+        }
+
+        .plan-period {
+            font-size: var(--font-size-base);
+            color: var(--color-neutral-400);
+            margin-bottom: var(--space-8);
+        }
+
+        .pricing-card.featured .plan-period {
+            color: var(--color-neutral-200);
+        }
+
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: var(--space-8);
+        }
+
+        .plan-features li {
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-card.featured .plan-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .plan-features li::before {
+            content: "✓ ";
+            color: var(--color-primary-400);
+            font-weight: bold;
+            margin-right: var(--space-2);
+        }
+
+        .pricing-card.featured .plan-features li::before {
+            color: var(--color-white);
+        }
+
+        details {
+            margin-bottom: var(--space-6);
+            padding: var(--space-6);
+            background: rgba(26, 26, 62, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-lg);
+        }
+
+        details summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--color-white);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--color-primary-400);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            background: rgba(30, 30, 70, 0.6);
+        }
+
+        details p {
+            margin-top: var(--space-4);
+            color: var(--color-neutral-300);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+                <img src="/images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+                <li><a href="./services.html" class="nav-link">Services</a></li>
+                <li><a href="./technology.html" class="nav-link">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+                <li class="lang-switcher">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="de">DE</span>
+                    <span class="lang-option" data-lang="nl">NL</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="tech-pattern"></div>
+        <div class="glow-orb blue" style="top: 15%; left: 10%;"></div>
+        <div class="glow-orb pink" style="bottom: 10%; right: 10%;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Choose the plan that fits your business needs</p>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark-900);">
+        <div class="container">
+            <div class="pricing-grid">
+
+                <div class="pricing-card" data-animate="animate-scaleIn">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">€299</div>
+                    <div class="plan-period">/month</div>
+                    <ul class="plan-features">
+                        <li>1 chatbot</li>
+                        <li>Up to 500 pages crawled</li>
+                        <li>5,000 conversations/month</li>
+                        <li>Email support</li>
+                        <li>Basic analytics</li>
+                        <li>Standard branding</li>
+                    </ul>
+                    <a href="./contact.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured" data-animate="animate-scaleIn" data-delay="100">
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">€799</div>
+                    <div class="plan-period">/month</div>
+                    <ul class="plan-features">
+                        <li>Up to 3 chatbots</li>
+                        <li>Unlimited pages crawled</li>
+                        <li>25,000 conversations/month</li>
+                        <li>Priority support</li>
+                        <li>Advanced analytics</li>
+                        <li>Custom branding</li>
+                        <li>API access</li>
+                    </ul>
+                    <a href="./contact.html" class="btn btn-accent" style="width: 100%;">Get Started</a>
+                </div>
+
+                <div class="pricing-card" data-animate="animate-scaleIn" data-delay="200">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <div class="plan-period">pricing</div>
+                    <ul class="plan-features">
+                        <li>Unlimited chatbots</li>
+                        <li>Unlimited conversations</li>
+                        <li>White-label solution</li>
+                        <li>Dedicated support</li>
+                        <li>Custom integrations</li>
+                        <li>SLA guarantees</li>
+                        <li>On-premise deployment</li>
+                    </ul>
+                    <a href="./contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--space-16); text-align: center;">
+                <h2>Add-On Services</h2>
+                <p
+                    style="color: var(--color-neutral-300); max-width: 700px; margin: var(--space-4) auto var(--space-12);">
+                    Extend your chatbot capabilities with our premium add-ons
+                </p>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-8); max-width: 1000px; margin: 0 auto;">
+                    <div class="pricing-card" data-animate="animate-scaleIn">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🤖</div>
+                        <h4>Additional Chatbots</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€150</div>
+                        <p style="color: var(--color-neutral-400);">/month per chatbot</p>
+                    </div>
+                    <div class="pricing-card" data-animate="animate-scaleIn" data-delay="100">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🌐</div>
+                        <h4>Extended Crawl Depth</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€100</div>
+                        <p style="color: var(--color-neutral-400);">/month</p>
+                    </div>
+                    <div class="pricing-card" data-animate="animate-scaleIn" data-delay="200">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧠</div>
+                        <h4>Custom Model Training</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€500+</div>
+                        <p style="color: var(--color-neutral-400);">one-time</p>
+                    </div>
+                    <div class="pricing-card" data-animate="animate-scaleIn" data-delay="300">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">💎</div>
+                        <h4>Premium Support</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€300</div>
+                        <p style="color: var(--color-neutral-400);">/month</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--space-16); text-align: center;">
+                <h2>Frequently Asked Questions</h2>
+                <div style="max-width: 800px; margin: var(--space-8) auto; text-align: left;">
+                    <details>
+                        <summary>Can I upgrade or downgrade my plan?</summary>
+                        <p>Yes, you can change your plan at any time. Changes take effect at the start of your next
+                            billing cycle.</p>
+                    </details>
+                    <details>
+                        <summary>What happens if I exceed my conversation limit?</summary>
+                        <p>We'll notify you when you're approaching your limit. You can upgrade your plan or purchase
+                            additional conversation credits.</p>
+                    </details>
+                    <details>
+                        <summary>Is there a setup fee?</summary>
+                        <p>No setup fees. You only pay the monthly subscription based on your chosen plan.</p>
+                    </details>
+                    <details>
+                        <summary>Do you offer a free trial?</summary>
+                        <p>Yes! Contact us to schedule a demo and trial period for your business.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="nav-logo">ultimAItech</h4>
+                    <p>Intelligent Chatbots for Modern Businesses</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="./about.html">About Us</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="./services.html">Chatbot Development</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ultimAItech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/i18n.js"></script>
+    <script type="module" src="/js/navigation.js"></script>
+    <script type="module" src="/js/animations.js"></script>
+</body>
+
+</html>

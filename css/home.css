@@ -421,10 +421,10 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../images/data-visualization.jpg');
+    background-image: url('../images/ai-data-visualization.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.25;
     z-index: 0;
 }
 
